@@ -1,39 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Nav from "./pages/Nav";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function Home() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1> <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-      <div className="card">
-        <button className='' onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="flex flex-col min-h-screen bg-gray-50">
+         <Nav />   
 
-export default App
+
+      {/* Hero Section */}
+      <header className="text-center py-12">
+        <h1 className="text-4xl font-bold text-gray-900">
+          Welcome to MyWebsite
+        </h1>
+        <p className="text-gray-600 mt-2">
+          Explore our culture, support, and more
+        </p>
+      </header>
+
+      {/* Card Section */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-6 py-12">
+        <div className="bg-white p-6 shadow-lg rounded-lg">
+          <h2 className="text-xl font-semibold text-gray-900">About Us</h2>
+          <p className="text-gray-600 mt-2">
+            Learn more about our journey and values.
+          </p>
+        </div>
+        <div className="bg-white p-6 shadow-lg rounded-lg">
+          <h2 className="text-xl font-semibold text-gray-900">Support</h2>
+          <p className="text-gray-600 mt-2">
+            Need help? Our support team is here for you.
+          </p>
+        </div>
+        <div className="bg-white p-6 shadow-lg rounded-lg">
+          <h2 className="text-xl font-semibold text-gray-900">Our Culture</h2>
+          <p className="text-gray-600 mt-2">
+            Discover what makes our culture unique.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}

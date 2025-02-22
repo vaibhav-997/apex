@@ -1,9 +1,75 @@
-import React from 'react'
+import React from "react";
+import Nav from "./Nav";
 
-function OurCulture() {
+export default function OurCulture() {
   return (
-    <div>Careers</div>
-  )
-}
+    <div className="flex min-w-screen flex-col min-h-screen bg-gray-50">
+      <Nav />
+      <div className="flex flex-col items-center p-10">
+        <h1 className="text-5xl font-extrabold text-gray-900 mb-6">Our Culture</h1>
+        <p className="text-lg text-gray-600 mb-10 max-w-3xl text-center leading-relaxed">
+          At our company, we foster innovation, collaboration, and personal growth. We believe in creating a workplace where everyone feels valued and empowered.
+        </p>
 
-export default OurCulture
+        {/* Mission & Values */}
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl w-full">
+          <div className="bg-white p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+            <h2 className="text-3xl font-semibold text-gray-900 mb-4">Our Mission</h2>
+            <img className="w-full" src="data:image/jpeg;base64,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" alt=""  srcset="" />
+            <p className="text-gray-700 leading-relaxed">
+              Our mission is to revolutionize the industry by providing top-notch services with a strong focus on customer satisfaction and innovation.
+            </p>
+          </div>
+          <div className="bg-white p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+            <h2 className="text-3xl font-semibold text-gray-900 mb-4">Our Values</h2>
+                       <img className="w-full" src="data:image/jpeg;base64,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" alt=""  srcset="" />
+
+            <ul className="list-disc list-inside text-gray-700 space-y-2">
+              <li>Integrity & Transparency</li>
+              <li>Innovation & Excellence</li>
+              <li>Collaboration & Teamwork</li>
+              <li>Customer-Centric Approach</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Team Culture */}
+        <div className="max-w-5xl mt-12 text-center">
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">Life at Our Company</h2>
+          
+          <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+            We believe in a work environment that promotes creativity and well-being. From team outings to flexible work policies, we ensure our employees have the best experience.
+          </p>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white p-6 rounded-lg shadow-lg text-center transition-transform transform hover:scale-105">
+              <h3 className="text-xl font-semibold text-gray-900">Flexible Hours</h3>
+              <p className="text-gray-600">Work on your own terms with our remote and flexible work policies.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-lg text-center transition-transform transform hover:scale-105">
+              <h3 className="text-xl font-semibold text-gray-900">Growth Opportunities</h3>
+              <p className="text-gray-600">We invest in training and mentorship programs for your career growth.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-lg text-center transition-transform transform hover:scale-105">
+              <h3 className="text-xl font-semibold text-gray-900">Team Bonding</h3>
+              <p className="text-gray-600">Frequent team-building activities, retreats, and celebrations.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Careers Section */}
+        <div className="max-w-5xl mt-16 text-center">
+          <h2 className="text-4xl font-bold text-gray-900">Join Our Team</h2>
+          <p className="text-lg text-gray-600 mt-4 mb-8 leading-relaxed">
+            Ready to be part of something great? Explore our career opportunities and grow with us.
+          </p>
+          <a
+            href="/careers"
+            className="px-6 py-3 bg-indigo-200  rounded-lg shadow-md hover:bg-indigo-300 transition-transform transform hover:scale-105 mx-auto"
+          >
+            View Open Positions
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}

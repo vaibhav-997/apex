@@ -4,9 +4,10 @@ import './index.css'
 import App from './App.jsx'
 import {RouterProvider, createBrowserRouter} from 'react-router-dom'
 import About from './pages/About.jsx'
-import Careers from './pages/OurCulture.jsx'
 import Support from './pages/Support.jsx'
 import OurCulture from './pages/OurCulture.jsx'
+import Login from './pages/Login.jsx'
+import Register from './pages/Register.jsx'
 
 const router =  createBrowserRouter([
   {
@@ -14,7 +15,7 @@ const router =  createBrowserRouter([
     element: <App />
   },
   {
-    path:"/about",
+    path:"/career",
     element:<About />
   },{
     path:"/our-culture",
@@ -22,6 +23,13 @@ const router =  createBrowserRouter([
   },{
     path:"/support",
     element:<Support />
+  },{
+    path:"/login",
+    element:<Login />
+  },
+  {
+    path:"/register",
+    element:<Register />
   },
 ])
 
@@ -30,7 +38,8 @@ const router =  createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router}>
-    <App />
+       <App />
+       
     </RouterProvider>
   </StrictMode>,
 )
